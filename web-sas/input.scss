@@ -1,0 +1,206 @@
+$light-color : #ffffff;
+$indigo-color : #5300b3;
+$grey-color : #707070;
+$red-color: #ff0000;
+
+$font-stack : 'helvetica','san-serif';
+
+
+body{
+    font:100,$font-stack;
+    margin: 0;
+}
+
+.nav{
+    background-color: $light-color;
+    color: $grey-color;
+    height: 50px;
+
+    a{
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+    
+        img{
+            height: 25px;
+            width: 25px;
+        }
+    
+    }
+
+    a:hover{
+        background-color: $red-color;
+        color: $indigo-color;
+        padding: 10px 20px;
+
+    }
+
+
+    .right{
+        display: block;
+        float: right;
+        text-align: center;
+        text-decoration: none;
+    }
+
+}
+
+.head{
+    padding: 20px;
+    background-image:url(/web-sas/sa.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-top: 1px solid $indigo-color;
+    border-bottom: 1px solid $red-color;
+    color: $light-color;
+    height: 400px;
+}
+
+
+.header-text{
+    text-align: center;
+
+    p{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    a{
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        border: $indigo-color;
+           
+    }
+}
+
+
+  @mixin judul ($color){
+        color: $color;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+
+.judul-header{
+    @include judul($indigo-color);
+}
+
+.judul-product{
+    @include judul($light-color);
+}
+
+
+.button-basic{
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+
+
+.button-primary{
+    @extend.button-basic;
+    background-color: orange;
+}
+
+
+.button-secondary{
+    @extend.button-basic;
+    background-color: greenyellow;
+}
+
+
+
+
+
+
+.about{
+    background-image: linear-gradient(to bottom right, $light-color,$grey-color);
+    color: $indigo-color;
+    height: 400px;
+    
+    img{
+        border-radius: 100%;
+        padding: 20px;
+        width: 300px;
+        height: 300px;
+    }
+
+    h1{
+        color: $indigo-color;
+        text-shadow: 1px 1px $light-color;
+        font-size: 46px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    h2{
+        color: $red-color;
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    p{
+        color: $grey-color;
+        font-size: 20px;
+    }
+
+}
+
+.grid-container{
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+}
+
+
+@mixin item($start,$end){
+
+    grid-column-start: $start;
+    grid-column-end: $end;
+}
+
+.item-sepertiga{
+    @include item(1,2);
+
+}
+
+.item-duapertiga{
+    @include item(2,3);
+    
+}
+
+
+
+
+
+
+.product{
+    background-color: $indigo-color;
+    height: 400px;
+}
+
+.contact{
+    background-color: $light-color;
+    color: $grey-color;
+    height: 50px;
+}
+
+.footer{
+    background-color: $indigo-color;
+    color: $light-color;
+    height: 50px;
+}

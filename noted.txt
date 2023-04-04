@@ -2,3 +2,6 @@ css preprosesor
 -SASS
 -STYLUS
 -Less
+
+
+untuk compile sass menjadi css, harus pindah dulu comandline ke folder yang bersangkutan
