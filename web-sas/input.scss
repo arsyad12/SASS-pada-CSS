@@ -184,22 +184,20 @@ body{
 }
 
 
-
-
-
-
 .product{
     background-color: $indigo-color;
     height: 400px;
 }
 
 
+.image-style{
 
-
-
-
-
-
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 10px;
+}
 
 
 .product-body{
@@ -212,6 +210,34 @@ body{
     @media screen and (max-width:800px){
         flex-direction: column;
     }
+
+    .product-item{
+        background-color: $light-color;
+        color: $grey-color;
+        box-shadow: 0 4px 8px 0 $grey-color;
+        margin: 16px; 
+        border-radius: 10px;
+        width: 340px;
+        img{
+            width: 90%;
+            @extend .image-style
+        }
+
+        .product-content{
+            padding: 20px;
+            text-align: justify;
+        }
+
+        .product-footer{
+            padding: 20px;
+            margin: 20px;
+        }
+
+        @media screen and (max-width:800px) {
+            width: 100%;
+        }
+    }
+
 }
 
 .contact{
