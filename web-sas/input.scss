@@ -12,9 +12,10 @@ body{
 }
 
 .nav{
+    overflow: hidden;
     background-color: $light-color;
     color: $grey-color;
-    height: 50px;
+    
 
     a{
         float: left;
@@ -46,6 +47,25 @@ body{
     }
 
 }
+
+
+
+@media screen and (max-width:800px) {
+    .nav{
+        a{
+            float: none;
+            width: 100%;
+        }
+
+    .right{
+        float: none;
+        width: 100%;
+    }
+    }
+}
+
+
+
 
 .head{
     padding: 20px;
@@ -131,7 +151,12 @@ body{
 .about{
     background-image: linear-gradient(to bottom right, $light-color,$grey-color);
     color: $indigo-color;
-    height: 400px;
+    min-height: 400px;
+
+    
+@media screen and (max-width:800px) {
+    text-align: center;
+}
     
     img{
         border-radius: 100%;
@@ -159,34 +184,70 @@ body{
 
 }
 
-.grid-container{
 
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 20px;
+//cara normal
+// .grid-container{
+
+//     display: grid;
+//     grid-template-columns: auto auto auto;
+//     padding: 20px;
+// }
+
+
+//responsive
+.grid-container{
+    box-sizing: border-box;
+
 }
 
 
-@mixin item($start,$end){
+//cara normal
 
-    grid-column-start: $start;
-    grid-column-end: $end;
+// @mixin item($start,$end){
+
+//     grid-column-start: $start;
+//     grid-column-end: $end;
+// }
+
+// .item-sepertiga{
+//     @include item(1,2);
+
+// }
+
+// .item-duapertiga{
+//     @include item(2,3);
+    
+// }
+
+
+//responsive
+
+@mixin item($value){
+width: $value;
+float: left;
+@media screen and (max-width:800px) {
+    float :none;
+    width:100%;
+}
 }
 
 .item-sepertiga{
-    @include item(1,2);
+    @include item(33%);
 
 }
 
 .item-duapertiga{
-    @include item(2,3);
+    @include item(66%);
     
 }
 
 
+
+
+
 .product{
     background-color: $indigo-color;
-    height: 400px;
+    
 }
 
 
@@ -241,9 +302,36 @@ body{
 }
 
 .contact{
-    background-color: $light-color;
-    color: $grey-color;
-    height: 50px;
+    background-image: url("/web-sas/maps.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 50px;
+
+    .info{
+        width: 50%;
+        @media screen and (max-width:800px) {
+            width: 75%;
+        }
+
+        background-color: lightgrey;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        text-align: justify;
+        border-radius: 10px;
+
+        i{
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+
+        h1{
+            size: 60px;
+        }
+    }
 }
 
 .footer{

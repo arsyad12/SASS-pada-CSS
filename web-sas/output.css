@@ -4,9 +4,9 @@ body {
 }
 
 .nav {
+  overflow: hidden;
   background-color: #ffffff;
   color: #707070;
-  height: 50px;
 }
 .nav a {
   float: left;
@@ -31,6 +31,16 @@ body {
   text-decoration: none;
 }
 
+@media screen and (max-width: 800px) {
+  .nav a {
+    float: none;
+    width: 100%;
+  }
+  .nav .right {
+    float: none;
+    width: 100%;
+  }
+}
 .head {
   padding: 20px;
   background-image: url(/web-sas/sa.jpg);
@@ -98,7 +108,12 @@ body {
 .about {
   background-image: linear-gradient(to bottom right, #ffffff, #707070);
   color: #5300b3;
-  height: 400px;
+  min-height: 400px;
+}
+@media screen and (max-width: 800px) {
+  .about {
+    text-align: center;
+  }
 }
 .about img {
   border-radius: 100%;
@@ -124,24 +139,33 @@ body {
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 20px;
+  box-sizing: border-box;
 }
 
 .item-sepertiga {
-  grid-column-start: 1;
-  grid-column-end: 2;
+  width: 33%;
+  float: left;
+}
+@media screen and (max-width: 800px) {
+  .item-sepertiga {
+    float: none;
+    width: 100%;
+  }
 }
 
 .item-duapertiga {
-  grid-column-start: 2;
-  grid-column-end: 3;
+  width: 66%;
+  float: left;
+}
+@media screen and (max-width: 800px) {
+  .item-duapertiga {
+    float: none;
+    width: 100%;
+  }
 }
 
 .product {
   background-color: #5300b3;
-  height: 400px;
 }
 
 .image-style, .product-body .product-item img {
@@ -191,9 +215,34 @@ body {
 }
 
 .contact {
-  background-color: #ffffff;
-  color: #707070;
-  height: 50px;
+  background-image: url("/web-sas/maps.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 50px;
+}
+.contact .info {
+  width: 50%;
+  background-color: lightgrey;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  text-align: justify;
+  border-radius: 10px;
+}
+@media screen and (max-width: 800px) {
+  .contact .info {
+    width: 75%;
+  }
+}
+.contact .info i {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.contact .info h1 {
+  size: 60px;
 }
 
 .footer {
